@@ -15,6 +15,7 @@ Organisations processing large volumes of internal requests face a common challe
 
 **Estimated manual processing time: ~2.5 hours per day for 20 requests**
 
+'''
 ## The Solution
 A fully automated triage flow that runs the moment a form is submitted:
 Form Submission → Retrieve Response → AI Sentiment Analysis
@@ -26,7 +27,7 @@ Form Submission → Retrieve Response → AI Sentiment Analysis
 **Estimated automated processing time: ~15 minutes per day for 20 requests**
 **Estimated time saving: 90%**
 
-
+'''
 
 ![Power Automate](https://img.shields.io/badge/Microsoft-Power%20Automate-0066FF?style=flat&logo=microsoft&logoColor=white)
 ![AI Builder](https://img.shields.io/badge/AI-Builder-742774?style=flat&logo=microsoft&logoColor=white)

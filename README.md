@@ -16,12 +16,13 @@ Organisations processing large volumes of internal requests face a common challe
 **Estimated manual processing time: ~2.5 hours per day for 20 requests**
 
 ## The Solution
-Form Submission → Retrieve Response → AI Sentiment Analysis
-       → Condition (Negative OR High Urgency?)
-              ├── TRUE  → URGENT email to department
-              └── FALSE → Standard email to department
-                    → Confirmation email to submitter
-                    → Log to Excel audit trail
+- Form Submission
+- Retrieve Response → AI Sentiment Analysis
+- Condition (Negative OR High Urgency?)
+    - TRUE  → URGENT email to department
+    - FALSE → Standard email to department
+- Confirmation email to submitter
+- Log to Excel audit trail
 **Estimated automated processing time: ~15 minutes per day for 20 requests**
 **Estimated time saving: 90%**
 

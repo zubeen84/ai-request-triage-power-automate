@@ -10,7 +10,7 @@ Organisations processing large volumes of internal requests face a common challe
 
 - Admin staff spend hours manually reading, judging urgency, and forwarding requests
 - Urgent or emotionally distressed messages are not always identified promptly
-- No consistent process — routing depends on individual judgement
+- No consistent process as routing depends on individual judgement
 - No audit trail unless manually maintained
 
 **Estimated manual processing time: ~2.5 hours per day for 20 requests**

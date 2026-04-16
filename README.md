@@ -1,10 +1,32 @@
-# AI-enabled internal request triage system
-Microsoft Power Automate | AI Builder | NLP | Microsoft 365
+# AI Request Triage System
+### Intelligent internal request routing using Microsoft Power Automate, AI Builder & NLP
+
+![Power Automate](https://img.shields.io/badge/Microsoft-Power%20Automate-0066FF?style=flat&logo=microsoft&logoColor=white)
+![AI Builder](https://img.shields.io/badge/AI-Builder-742774?style=flat&logo=microsoft&logoColor=white)
+![NLP](https://img.shields.io/badge/NLP-Sentiment%20Analysis-FF6B35?style=flat)
+![Status](https://img.shields.io/badge/Status-Complete%20%26%20Tested-1D9E75?style=flat)
+![Governance](https://img.shields.io/badge/Design-Responsible%20AI-742774?style=flat)
+
+---
+
+## At a Glance
+
+| | |
+|---|---|
+| **Problem** | Manual request triage is slow, inconsistent, and misses urgent submissions |
+| **Solution** | End-to-end automated pipeline with NLP sentiment analysis and conditional routing |
+| **Time saving** | ~2.5 hrs/day → ~15 mins/day for 20 requests **(90% reduction)** |
+| **Governance** | Dual-trigger logic, human oversight at every output, full audit trail |
+| **Environment** | 100% Microsoft 365, GDPR compliant, no third-party data transfer |
+
+---
 
 ## Overview
 An end-to-end no-code AI automation pipeline that intelligently triages internal workplace requests using natural language processing. The system analyses the sentiment of submitted requests, applies conditional routing logic, and automatically escalates urgent or distressed submissions while eliminating manual processing entirely.
 This project demonstrates how pre-trained NLP models can be integrated into real business workflows with appropriate governance and human oversight controls.
 
+
+---
 ## The Problem
 Organisations processing large volumes of internal requests face a common challenge:
 
@@ -16,26 +38,24 @@ Organisations processing large volumes of internal requests face a common challe
 **Estimated manual processing time: ~2.5 hours per day for 20 requests**
 
 ## The Solution
-- Form Submission
-- Retrieve Response → AI Sentiment Analysis
-- Condition (Negative OR High Urgency?)
-    - TRUE  → URGENT email to department
-    - FALSE → Standard email to department
-- Confirmation email to submitter
-- Log to Excel audit trail
+
+A four-stage automated pipeline:
+
+**Routing logic (dual-trigger):**
+- If AI detects **negative sentiment** → URGENT email to department
+- If submitter selects **High urgency** → URGENT email to department
+- Otherwise → Standard email to department
+- Confirmation email sent to submitter in all cases
+- Every submission logged to SharePoint audit trail
+
 **Estimated automated processing time: ~15 minutes per day for 20 requests**
 **Estimated time saving: 90%**
 
-
-![Power Automate](https://img.shields.io/badge/Microsoft-Power%20Automate-0066FF?style=flat&logo=microsoft&logoColor=white)
-![AI Builder](https://img.shields.io/badge/AI-Builder-742774?style=flat&logo=microsoft&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Complete%20%26%20Tested-1D9E75?style=flat)
-![NLP](https://img.shields.io/badge/NLP-Sentiment%20Analysis-FF6B35?style=flat)
+### Full flow overview
+![Full Flow](screenshots/Workflow.png)
 
 
 ## Architecture
-
-### Components
 
 | Component | Tool | Purpose |
 |---|---|---|
@@ -46,8 +66,7 @@ Organisations processing large volumes of internal requests face a common challe
 | Notifications | Outlook (V2) | Department routing + submitter confirmation |
 | Audit trail | Excel (SharePoint) | Logs all submissions for governance |
 
-### Full flow overview
-![Full Flow](screenshots/Workflow.png)
+
 
 ### AI Model Detail
 
@@ -57,20 +76,14 @@ The sentiment analysis uses Microsoft AI Builder's pre-trained NLP model, which 
 - **Neutral** - factual, no strong emotional content  
 - **Negative** - frustration, dissatisfaction, or urgency detected
 
-The model analyses the free-text description field and the output directly controls the routing decision.
-
 ---
+## Governance & Responsible AI Design
 
-## Governance Design
+This project applies responsible AI principles throughout, not as an afterthought, but as a core design constraint.
 
-A key design principle of this project is that **AI informs, humans decide**. Governance controls include:
+### Why dual-trigger logic?
+A known limitation of sentiment models is that a calm but time-sensitive message may not register as negative. The dual-trigger condition addresses this: submitters can manually flag High urgency, ensuring the system catches what the AI might miss.
 
-### Dual-trigger condition
-The urgent routing pathway fires if:
-- AI detects **negative** sentiment, **OR**
-- Submitter manually selects **High** urgency
-
-This safeguard addresses a known limitation of sentiment models, a calm but time-sensitive message may not be detected as negative, but the submitter can still flag it correctly.
 
 ### Human validation points
 - Every output is an email to a human inbox, no autonomous action is taken
@@ -79,12 +92,12 @@ This safeguard addresses a known limitation of sentiment models, a calm but time
 
 ### Audit trail
 Every submission is logged to a SharePoint Excel file with:
-- Submission timestamp
-- Submitter name and department
+- Submission timestamp, submitter name and department
 - Request title and description
-- Urgency level selected
-- AI sentiment classification
+- Urgency level selected by submitter
+- AI sentiment classification output
 - Routing pathway taken
+
 
 ### Excel audit trail
 ![Audit Trail](screenshots/Excel%20form%20for%20Audit%20trial.png)
@@ -147,22 +160,26 @@ Three test scenarios were run to validate the flow:
 
 ---
 
-## Relation to Data Science
+## Skills Demonstrated
 
-This project applies concepts from my MSc Applied Data Science in a practical deployment context:
+`Natural Language Processing` `Sentiment Analysis` `Responsible AI` `AI Governance`  
+`Process Automation` `No-Code AI Deployment` `Microsoft Power Automate` `AI Builder`  
+`Microsoft Forms` `SharePoint` `Excel` `Outlook` `Microsoft 365` `GDPR Compliance`  
+`Risk Analysis` `Audit Trail Design` `Human-in-the-Loop Design`
 
-- **Natural Language Processing** - understanding how transformer-based sentiment models classify text
-- **Model limitations and bias** - recognising where pre-trained models can fail and designing mitigations
-- **Pipeline design** - structuring data flow from input to output with validation at each stage
-- **Responsible AI** - governance, human oversight, GDPR compliance, and audit trails
+---
+## Relation to Data Science & AI Governance
+
+This project applies MSc Applied Data Science concepts in a live deployment context:
+
+- **NLP:** transformer-based sentiment classification in a real workflow
+- **Model limitations:** understanding where pre-trained models fail and designing mitigations
+- **Pipeline design:** structured data flow with validation at each stage
+- **Responsible AI:** governance, human oversight, GDPR compliance, and auditability
+- **ISO 42001 alignment:** risk-based approach, human oversight controls, and audit trail reflect ISO 42001 AI management system principles
 
 ---
 
-## Tools and Technologies
-
-`Microsoft Power Automate` `AI Builder` `Microsoft Forms` `Outlook` `Excel` `SharePoint` `Natural Language Processing` `Sentiment Analysis` `No-Code Automation` `Microsoft 365`
-
----
 
 ## Files in This Repository
 
@@ -181,9 +198,8 @@ This project applies concepts from my MSc Applied Data Science in a practical de
 
 ## Author
 
-Zubeen Khalid
-MSc Applied Data Science  
-Anglia Ruskin University
-ISO 42001 certified
+**Zubeen Khalid**  
+MSc Applied Data Science Distinction - Anglia Ruskin University  
+ISO 42001 Certified | AI+ Foundation | Prompt Engineering Level 1  
 
----
+[LinkedIn](www.linkedin.com/in/zubeenkhalid) · [GitHub](https://github.com/zubeen84)

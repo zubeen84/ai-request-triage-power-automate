@@ -110,29 +110,31 @@ All data remains within the Microsoft 365 environment. No data is transmitted to
 
 Three test scenarios were run to validate the flow:
 
-**Test 1 — Negative sentiment detected**
-> *"I have been waiting three weeks and nobody has helped me. This is completely unacceptable."*
+**Test 1 - Negative sentiment detected**
+> *"We are short-staffed and unable to complete some urgent tasks. Please provide some help."*
 - AI output: Negative
 - Route: URGENT email
 
 ### URGENT email received
 ![Urgent Email](screenshots/urgent%20email.png)
 
-**Test 2 — Neutral / positive message**
-> *"I would like to request some Excel training at your earliest convenience."*
+**Test 2 - Neutral / positive message**
+> *"Can you provide some new training on AI"*
 - AI output: Positive
 - Route: Standard email
 
-### Standard email received
+ ### Standard email received
 ![Non Urgent Email](screenshots/non%20urgent%20email.png)
 
-**Test 3 — Calm message, High urgency selected**
+**Test 3 - Calm message, High urgency selected**
 > *"Please could someone look at the server issue. It is affecting today's deadline."*
 - AI output: Neutral
 - Urgency field: High
 - Route: URGENT email ✓ (dual trigger working correctly)
 
-### Test run — succeeded
+ 
+
+### Test run - succeeded
 ![Test Run](screenshots/test%20run.png)
 ---
 

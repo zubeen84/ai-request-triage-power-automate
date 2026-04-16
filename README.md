@@ -184,5 +184,6 @@ This project applies concepts from my MSc Applied Data Science in a practical de
 Zubeen Khalid
 MSc Applied Data Science  
 Anglia Ruskin University
+ISO 42001 certified
 
 ---

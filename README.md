@@ -46,6 +46,9 @@ Organisations processing large volumes of internal requests face a common challe
 | Notifications | Outlook (V2) | Department routing + submitter confirmation |
 | Audit trail | Excel (SharePoint) | Logs all submissions for governance |
 
+### Full flow overview
+![Full Flow](screenshots/Workflow.png)
+
 ### AI Model Detail
 
 The sentiment analysis uses Microsoft AI Builder's pre-trained NLP model, which applies transformer-based text classification to return one of three outputs:
@@ -83,6 +86,9 @@ Every submission is logged to a SharePoint Excel file with:
 - AI sentiment classification
 - Routing pathway taken
 
+### Excel audit trail
+![Audit Trail](screenshots/Excel%20form%20for%20Audit%20trial.png)
+
 ### Data compliance
 All data remains within the Microsoft 365 environment. No data is transmitted to third-party services. AI Builder operates within Microsoft's GDPR-compliant cloud infrastructure.
 
@@ -107,12 +113,18 @@ Three test scenarios were run to validate the flow:
 **Test 1 — Negative sentiment detected**
 > *"I have been waiting three weeks and nobody has helped me. This is completely unacceptable."*
 - AI output: Negative
-- Route: URGENT email ✓
+- Route: URGENT email
+
+### URGENT email received
+![Urgent Email](screenshots/urgent%20email.png)
 
 **Test 2 — Neutral / positive message**
 > *"I would like to request some Excel training at your earliest convenience."*
 - AI output: Positive
-- Route: Standard email ✓
+- Route: Standard email
+
+### Standard email received
+![Non Urgent Email](screenshots/non%20urgent%20email.png)
 
 **Test 3 — Calm message, High urgency selected**
 > *"Please could someone look at the server issue. It is affecting today's deadline."*
@@ -120,6 +132,8 @@ Three test scenarios were run to validate the flow:
 - Urgency field: High
 - Route: URGENT email ✓ (dual trigger working correctly)
 
+### Test run — succeeded
+![Test Run](screenshots/test%20run.png)
 ---
 
 ## Key Learnings

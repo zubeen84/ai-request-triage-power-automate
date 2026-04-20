@@ -1,4 +1,4 @@
-# AI Request Triage System
+# AI Request Triage and Automation System
 ### Intelligent internal request routing using Microsoft Power Automate, AI Builder & NLP
 
 ![Power Automate](https://img.shields.io/badge/Microsoft-Power%20Automate-0066FF?style=flat&logo=microsoft&logoColor=white)
